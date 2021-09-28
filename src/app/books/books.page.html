@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des livres de la bibliothèque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let book of books">
+    <ion-item>
+      <ion-thumbnail *ngIf="book.thumbnail" slot="start">
+        <ion-img [src]="book.thumbnail"></ion-img>
+      </ion-thumbnail>
+      <ion-icon *ngIf="!book.thumbnail" slot="start" name="book-outline" class="mr-2"></ion-icon>
+      <ion-label>{{book.title}} de {{book.author}}</ion-label>
+      <ion-icon *ngIf="book.status === 'available' " slot="end" name="eye"></ion-icon>
+      <ion-icon *ngIf="book.status === 'borrowed' " slot="end" name="eye-off-outline"></ion-icon>
+      <ion-buttons slot="end">
+        <ion-button (click)="borrowedActionSheet(book)">
+          <ion-icon slot="icon-only" name="ellipsis-horizontal-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="showInfo(book)">
+          <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

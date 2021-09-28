@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/books"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{book?.title}} de {{book?.author}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-img [src]="book.thumbnail"></ion-img>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Titre</ion-label>
+      <ion-input [value]="book.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Auteur.e(s)</ion-label>
+      <ion-input [value]="book.author"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Genre</ion-label>
+      <ion-input [value]="book.genre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">ISBN</ion-label>
+      <ion-input [value]="book.ISBN"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Résumé</ion-label>
+      <ion-textarea [value]="book.summary" rows="10"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Lien vers l'auteur</ion-label>
+      <ion-input (click)="openLinkExtern(book)" [value]="book.linkExtern"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Statut du livre</ion-label>
+      <ion-input *ngIf="book.status === 'available'">Livre disponible
+        <ion-button (click)="borrowBook(book)"> Emprunter ?
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-input>
+      <ion-input *ngIf="book.status === 'borrowed'" value="Livre non disponible"></ion-input>
+    </ion-item>
+  </ion-card>
+</ion-content>

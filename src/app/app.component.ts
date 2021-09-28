@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  public selectedIndex = 0;
+  public appPages = [
+    { title: 'Accueil', url: '/home', icon: 'home' },
+    { title: 'Livres', url: '/books', icon: 'library-outline' }
+  ];
+  constructor() { }
 }
