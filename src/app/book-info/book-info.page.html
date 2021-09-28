@@ -29,7 +29,17 @@
       <ion-input [value]="book.ISBN"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="stacked">Résumé</ion-label>
+      <ion-label position="stacked">Résumé
+      </ion-label>
+      <span>
+        <ion-button (click)="readSummary(book, stateReader)"> Ecouter ?
+          <ion-icon name="ear-outline"></ion-icon>
+        </ion-button>
+      </span>
+      <span>
+        Lecture :
+        <ion-input [value]="stateReader"></ion-input>
+      </span>
       <ion-textarea [value]="book.summary" rows="10"></ion-textarea>
     </ion-item>
     <ion-item>
