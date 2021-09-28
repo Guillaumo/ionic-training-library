@@ -10,15 +10,14 @@ Il y aura un menu présent sur toutes ces pages facilitant l'accès à chaque pa
 Les fonctionalités :
 * dans la page liste des livres :
 	- possibilité de voir si les livres sont disponibles ou non à l'emprunt
-	- possibiité de pouvoir emprunter un livre avec sa date d'emprunt et la date de retour
-	- possibilité de le rendre et de contôler la date de retour ?
+	- possibiité de pouvoir emprunter un livre
 * dans la page détail du livre
 	- possibilité d'afficher le détail d'un livre :
 		. titre, auteur,...
 		. un résumé
 		. un lien externe vers l'auteur
-		. un lien externe vers livre audio 
-- possibilité d'écouter le résumé du livre
+	- possibilité d'écouter le résumé du livre
+	- possibilité d'emprunter le livre si disponible
 
 Les plugins Capacitor à implémenter :
 - Browser pour ouvrir le lien internet notamment sur une page décriavant l'auteur
